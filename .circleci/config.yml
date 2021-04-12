@@ -12,10 +12,10 @@ jobs:
  #     - restore_cache:
  #         keys:
  #           - dotnet-packages-v1-{{ checksum "SimpleCalc/SimpleCalc.csproj" }}
-      - run: systeminfo
+ #     - run: systeminfo
       - run:
           name: "Install project dependencies"
-          command: dotnet.exe restore
+          command: dotnet restore
       - save_cache:
           paths:
             - C:\Users\circleci\.nuget\packages
