@@ -5,8 +5,8 @@ orbs:
 
 jobs:
   test:
-    executor:
-      name: windows/default
+    machine: true
+    resource_class: brianoh1979/brian-runner
     steps:
       - checkout
       - restore_cache:
