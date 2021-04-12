@@ -8,11 +8,10 @@ jobs:
     machine: true
     resource_class: brianoh1979/brian-runner
     steps:
- #     - checkout
- #     - restore_cache:
- #         keys:
- #           - dotnet-packages-v1-{{ checksum "SimpleCalc/SimpleCalc.csproj" }}
- #     - run: systeminfo
+      - checkout
+      - restore_cache:
+          keys:
+            - dotnet-packages-v1-{{ checksum "SimpleCalc/SimpleCalc.csproj" }}
       - run:
           name: "Install project dependencies"
           command: dotnet restore
