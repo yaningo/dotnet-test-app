@@ -6,7 +6,7 @@ orbs:
 jobs:
   test:
     machine: true
-    resource_class: brianoh1979/brian-runner
+    resource_class: brianoh1979/brian-winrunner
     steps:
       - checkout
       - restore_cache:
