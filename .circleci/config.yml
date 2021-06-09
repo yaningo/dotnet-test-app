@@ -27,14 +27,17 @@ jobs:
   build:
     description: Build application with Release configuration
     machine: true
-    resource_class: brianoh1979/brian-runner
+    resource_class: brianoh1979/brian-winrunner
     steps:
 #      - checkout
-      - run:
-          name: "Build Application according to some given configuration"
-          command: dotnet build --configuration Release
+      - run: echo %TEMP%
+#      - run:
+#          name: "Build Application according to some given configuration"
+#          command: dotnet build --configuration Release
 workflows:
   build-and-test:
     jobs:
       - test
-      - build
+      - build:
+          requires:
+            - test
