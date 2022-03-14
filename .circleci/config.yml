@@ -9,6 +9,7 @@ jobs:
       name: windows/default
     steps:
       - checkout
+      - run: dotnet.exe --info
       - restore_cache:
           keys:
             - dotnet-packages-v1-{{ checksum "SimpleCalc/SimpleCalc.csproj" }}
