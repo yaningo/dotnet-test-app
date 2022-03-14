@@ -9,9 +9,9 @@ jobs:
       name: windows/default
     steps:
       - checkout
+      - run: choco install netfx-4.8
       - run: dotnet.exe --info
       - run: dotnet.exe --version
-      - run: choco install netfx-4.8
       - restore_cache:
           keys:
             - dotnet-packages-v1-{{ checksum "SimpleCalc/SimpleCalc.csproj" }}
